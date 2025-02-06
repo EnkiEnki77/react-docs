@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 3em);
+}
+
+.square {
+  background-color: white;
+  /* width: 3em; */
+  height: 3em;
+  cursor: pointer;
+}
