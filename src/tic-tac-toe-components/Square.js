@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const Square = ({value, onSquareClick}) => {
-   
+const Square = () => {
   return (
-      <button className='square' onClick={onSquareClick}>{ value}</button>
+    <div className='square'></div>
   )
 }
 

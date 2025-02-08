@@ -16,4 +16,5 @@ body {
   /* width: 3em; */
   height: 3em;
   cursor: pointer;
+  border: 1px solid black;
 }
