@@ -4,8 +4,13 @@ import Board from './Board'
 function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
+  const [moveSortToggle, setMoveSortToggle] = useState(false)
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
+
+  function handleMoveSort() {
+    setMoveSortToggle(!moveSortToggle)
+  }
 
   function handlePlay(nextSquares) {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
@@ -45,7 +50,8 @@ function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
-        <ol>{moves}</ol>
+        <button className='move-sort' onClick={handleMoveSort}>{ moveSortToggle ? 'Sort descending' : 'Sort ascending'}</button>
+        <ol className='game-info-list' style={{display: 'flex', flexDirection: moveSortToggle ? 'column-reverse' : 'column'}}>{moves}</ol>
       </div>
     </div>
   );
